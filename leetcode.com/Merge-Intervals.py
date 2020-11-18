@@ -22,7 +22,7 @@ intervals[i].length == 2
 """
 
 # define a list for testing purposes
-intervals = [[1,3],[2,6],[8,10],[15,18]]
+intervals = [[1,3],[2,6],[8,10],[9,18]]
 
 #actual code to submit
 count = 0
@@ -30,7 +30,7 @@ for i in intervals:
     if intervals[count][1] > intervals[count+1][0]:
         intervals[count][1] = intervals[count+1][1]
         intervals.remove(intervals[count+1])
-count += 1
+    count += 1
 
 #use print statement to check if it works
 print(intervals)
