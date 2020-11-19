@@ -22,15 +22,19 @@ intervals[i].length == 2
 """
 
 # define a list for testing purposes
-intervals = [[1,3],[2,6],[8,10],[9,18]]
+intervals = [[1,3],[2,6],[8,10],[15,18]]
 
 #actual code to submit
+sort = intervals
 count = 0
-for i in intervals:
-    if intervals[count][1] > intervals[count+1][0]:
-        intervals[count][1] = intervals[count+1][1]
-        intervals.remove(intervals[count+1])
-    count += 1
+for i in sort:
+    length = len(sort)
+    if count < length-1:
+        if sort[count][1] >= sort[count+1][0]:
+            sort[count][1] = sort[count+1][1]
+            sort.remove(sort[count+1])
+        if length > count-1:
+            count += 1
 
 #use print statement to check if it works
-print(intervals)
+print(sort)
