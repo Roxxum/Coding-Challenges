@@ -21,11 +21,11 @@ intervals[i].length == 2
 0 <= starti <= endi <= 104
 """
 
-# define a list for testing purposes
+# define an input for testing purposes
 intervals = [[1,3],[2,6],[8,10],[15,18]]
 
 #actual code to submit
-sort = intervals
+sort = sorted(intervals)
 count = 0
 for i in sort:
     length = len(sort)
