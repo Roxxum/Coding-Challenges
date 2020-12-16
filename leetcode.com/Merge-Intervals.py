@@ -24,7 +24,7 @@ intervals[i].length == 2
 # define an input for testing purposes
 intervals = [[1,3],[2,6],[8,10],[15,18]]
 
-#actual code to submit
+# actual code to submit
 sort = sorted(intervals)
 count = 0
 for i in sort:
@@ -36,5 +36,5 @@ for i in sort:
         if length > count-1:
             count += 1
 
-#use print statement to check if it works
+# use print statement to check if it works
 print(sort)

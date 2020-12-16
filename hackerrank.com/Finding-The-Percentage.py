@@ -54,8 +54,8 @@ Arjun = 70, 98, 63
 Malika = 52, 56, 60
 query_name = Malika
 
-#actual code to submit
+# actual code to submit
 ans = sum(query_name) / len(query_name)
 
-#use print statement to check if it works
+# use print statement to check if it works
 print(ans)
