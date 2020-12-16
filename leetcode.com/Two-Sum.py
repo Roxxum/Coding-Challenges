@@ -30,22 +30,17 @@ Only one valid answer exists
 """
 
 # define an input for testing purposes
-nums = [3,12,7,3]
-target = 6
+nums = [-5,2,5,9,11,15]
+target = 16
 
 # actual code to submit
 length = len(nums)
-count = 0
 solved = []
 
 for i in range(length):
-    count = 0
-    for z in range(length):
-        if nums[z] + nums[count] == target:
-            if nums[z] != nums[count]:
-                solved.extend((z, count))
-        else:
-            count += 1
+    for z in range(i + 1, length):
+        if nums[i] + nums[z] == target:
+            solved.extend((i, z))
 
 # use print statement to check if it works
 print(solved)
