@@ -7,10 +7,10 @@ input = 'some value'
 
 #actual code to submit
 def solution:
-    if something:
-        do something
+    if condition:
+        do something here
     else:
-        do something else
+        do something different
 
 #use print statement to check if it works
 print(solution)
