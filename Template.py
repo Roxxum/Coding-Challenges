@@ -6,7 +6,7 @@ Coding Challange description goes here
 input = 'some value'
 
 # actual code to submit
-def solution:
+def solution(input):
     if condition:
         do something here
     else:
