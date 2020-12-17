@@ -28,15 +28,22 @@ C = [-1, 2]
 D = [ 0, 2]
 
 # actual code to submit
+tracker = {}
 solution = 0
-target = 0
 
 for i in range(len(A)):
-    for z in range(len(A)):
-        for y in range(len(A)):
-            for x in range(len(A)):
-                if A[i] + B[z] + C[y] + D[x] == target:
-                    solution += 1
+    for z in range(len(B)):
+        num = A[i] + B[z]
+        if num in tracker:
+            tracker[num] = tracker[num] + 1
+        else:
+            tracker[num] = 1
+
+for y in range(len(C)):
+    for x in range(len(D)):
+        num = C[y] + D[x]
+        if -num in tracker:
+            solution += tracker[-num]
 
 # use print statement to check if it works
 print(solution)
