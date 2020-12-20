@@ -25,15 +25,15 @@ Constraints:
 """
 
 # define an input for testing purposes
-nums = [5,1,5,5,2,5,4]
-length = len(nums)
-solution = False
+nums = [1,2,-10,-8,-7]
 
 # actual code to submit
-for i in range(length-2):
-    if nums[i+1] > nums[i]:
-        if nums[i+2] > nums[i+1]:
-            solution = True
+solution = False
+length = len(nums)
+
+for i in range(len(nums)-2):
+    if nums[i] < nums[i+1] < nums[i+2]:
+        solution = True
 
 # use print statement to check if it works
 print(solution)
