@@ -41,28 +41,22 @@ K = 10
 
 # actual code to submit
 keyfound = False
-decoded = []
+decoded = ""
 index = 0
 
 def alpha(str):
     return str.isalpha()
 
 while not keyfound:
-    print(index)
     if len(decoded) >= K:
         keyfound = True
         break
     elif alpha(S[index]):
-        print('alpha:', S[index])
-        decoded.append(S[index])
-        index += 1
+        decoded += S[index]
     else:
-        print('digit:', S[index])
-        for i in range(int(S[index])-1):
-            for z in range(len(decoded)):
-                decoded.append(decoded[z])
-                print(decoded)
-        index += 1
+        decoded *= int(S[index])
+    
+    index += 1
 
 # use print statement to check if it works
 print(decoded[K-1])
