@@ -25,9 +25,11 @@ Constraints:
 """
 
 # define an input for testing purposes
-nums = [1,2,-10,-8,-7]
+nums = [20,100,10,12,5,13]
+# this should return true because 10 > 12 > 13
 
 # actual code to submit
+# TODO: this solution does not work for nonconsecutive index positions 
 solution = False
 length = len(nums)
 

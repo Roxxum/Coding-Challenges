@@ -29,10 +29,12 @@ Constraints:
 # define an input for testing purposes
 A = [2,7,2]
 K = 1
+# this should return 3
 
 # actual code to submit
 B = []
 
+# TODO: this does not check what operator should be used it just assumes
 for i in range(len(A)):
     if A[i] > K:
         B.append(A[i] - K)

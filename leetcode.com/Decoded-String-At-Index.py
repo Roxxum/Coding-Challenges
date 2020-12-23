@@ -40,6 +40,7 @@ S = "a2b3c4d5e6f7g8h9"
 K = 10
 
 # actual code to submit
+# TODO: check the string as you go, current solution exceeds time limit
 keyfound = False
 decoded = ""
 index = 0

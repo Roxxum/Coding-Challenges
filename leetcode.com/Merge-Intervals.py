@@ -22,13 +22,15 @@ intervals[i].length == 2
 """
 
 # define an input for testing purposes
-intervals = [[1,3],[2,6],[8,10],[15,18]]
+intervals = [[1,4],[2,3]]
+# this should return [[1,4]]
 
 # actual code to submit
 sort = sorted(intervals)
 count = 0
 for i in sort:
     length = len(sort)
+    # TODO: This does not work for most test cases 
     if count < length-1:
         if sort[count][1] >= sort[count+1][0]:
             sort[count][1] = sort[count+1][1]
