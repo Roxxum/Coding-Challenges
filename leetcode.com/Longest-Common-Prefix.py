@@ -20,11 +20,13 @@ strs[i] consists of only lower-case English letters.
 """
 
 # define an input for testing purposes
-strs = ["flower","flow","flight"]
+strs = ["dog","racecar","car"]
+# this should return 'car'
 
 # actual code to submit
 prefix = ''
 
+# TODO: this is actually so bad and literally only works for one type of prefix
 def checking(index):
     global prefix
     check = strs[0][index]
