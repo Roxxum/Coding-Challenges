@@ -34,8 +34,6 @@ palindrome = False
 string = str(x)
 reverse = ''.join(reversed(string))
 
-print(string, reverse)
-
 if reverse == string:
     palindrome = True
 
