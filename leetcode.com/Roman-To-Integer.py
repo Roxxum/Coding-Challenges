@@ -53,7 +53,7 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 """
 
 # define an input for testing purposes
-s = "MCMXCIV"
+s = "III"
 
 # actual code to submit
 def solution(s):
@@ -76,13 +76,33 @@ def solution(s):
     math = []
 
     for i in range(len(s)):
-        if s[i] == 'I' or s[i] == 'X' or s[i] == 'C':
-            if s[i+1] == 'V' or s[i+1] == 'X' or s[i+1] == 'L' or s[i+1] == 'C' or s[i+1] == 'D' or s[i+1] == 'M':
-                math.append(-roman[s[i]])
+        if s[i] == 'I':
+            if i < len(s)-1:
+                if s[i+1] == 'V' or s[i+1] == 'X':
+                    math.append(-roman[s[i]])
+                else:
+                    math.append(roman[s[i]])
+            else:
+                math.append(roman[s[i]])
+        elif s[i] == 'X':
+            if i < len(s)-1:
+                if s[i+1] == 'L' or s[i+1] == 'C':
+                    math.append(-roman[s[i]])
+                else:
+                    math.append(roman[s[i]])
+            else:
+                math.append(roman[s[i]])
+        elif s[i] == 'C':
+            if i < len(s)-1:
+                if s[i+1] == 'D' or s[i+1] == 'M':
+                    math.append(-roman[s[i]])
+                else:
+                    math.append(roman[s[i]])
             else:
                 math.append(roman[s[i]])
         else:
             math.append(roman[s[i]])
+        print(math)
     return sum(math)
 
 # use print statement to check if it works
