@@ -76,13 +76,15 @@ def solution(s):
     math = []
 
     for i in range(len(s)):
-        if s[i] == 'I' or 'X' or 'C': # TODO: Why is this returning true for 'M'?????
+        print(i, s[i], roman[s[i]])
+        if s[i] == 'I' or 'X' or 'C': # BUG: Why is this returning true for every character?????
             if s[i+1] == 'V' or 'X' or 'L' or 'C' or 'D' or 'M':
-                math.append((roman[s[i+1]]) - (roman[s[i]]))
+                math.append(-roman[s[i]])
             else:
                 math.append(roman[s[i]])
         else:
             math.append(roman[s[i]])
+        print(math)
 
     return sum(math)
 
