@@ -65,12 +65,6 @@ def solution(s):
         'C': 100,
         'D': 500,
         'M': 1000,
-        'IV': 4,
-        'IX': 9,
-        'XL': 40,
-        'XC': 90,
-        'CD': 400,
-        'CM': 900
     }
 
     math = []
@@ -102,7 +96,6 @@ def solution(s):
                 math.append(roman[s[i]])
         else:
             math.append(roman[s[i]])
-        print(math)
     return sum(math)
 
 # use print statement to check if it works
