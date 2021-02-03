@@ -33,7 +33,9 @@ s consists of parentheses only '()[]{}'.
 """
 
 # define an input for testing purposes
+# TODO: This test case should return False
 s = "(}{)"
+# # TODO: This test case should return True
 #s = "{[]}"
 
 # actual code to submit
@@ -50,13 +52,9 @@ def solution(input):
     count = 0
 
     for i in ans[0:-1]:
-        print(-ans.index(i)-1, 'is', ans[-ans.index(i) -1], ans[-ans.index(i)], 'is', -ans.index(i))
-        print(-ans.index(i)-1, "<", (-len(ans) / 2))
         if ans[ans.index(i)+1] == pairs[i]:
-            print(ans[ans.index(i)+1], 'pairs with', pairs[i])
             count += 2
-        elif ans[-ans.index(i) -1] == pairs[i] and -ans.index(i) >= (-len(ans) / 2):
-            print(ans[-ans.index(i) -1], 'pairs with', pairs[i], 'and', -ans.index(i)-1, "<", (-len(ans) / 2))
+        elif ans[-ans.index(i) -1] == pairs[i]:
             count += 2
 
     if count == len(ans):
