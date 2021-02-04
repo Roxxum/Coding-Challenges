@@ -13,4 +13,4 @@ def solution(input):
         do something different
 
 # use print statement to check if it works
-print(solution)
+print(solution(input))
