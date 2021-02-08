@@ -31,6 +31,7 @@ Constraints:
 1 <= s.length <= 104
 s consists of parentheses only '()[]{}'.
 """
+
 # define an input for testing purposes
 s = "([)]"
 
@@ -59,13 +60,14 @@ def solution(input):
             if pairs[i] == check[-1]:
                 check.pop()
             else:
-                check.insert(0, check)
+                check.insert(0, i)
         else:
-            check.insert(0, check)
+            check.insert(0, i)
 
     if len(check) == 0:
         return True
     else:
         return False
+
 # use print statement to check if it works
 print(solution(s))
