@@ -31,33 +31,39 @@ Constraints:
 1 <= s.length <= 104
 s consists of parentheses only '()[]{}'.
 """
-
 # define an input for testing purposes
-# TODO: This test case should return False
-s = "(}{)"
-# # TODO: This test case should return True
-#s = "{[]}"
+s = "([)]"
 
 # actual code to submit
 def solution(input):
     pairs = {
-        "(" : ")",
-        "[" : "]",
-        "{" : "}",
-        ")" : None,
-        "]" : None,
-        "}" : None
-    }
-    ans = list(s)
-    count = 0
+        ")" : "(",
+        "]" : "[",
+        "}" : "{"}
 
-    for i in ans[0:-1]:
-        if ans[ans.index(i)+1] == pairs[i]:
-            count += 2
-        elif ans[-ans.index(i) -1] == pairs[i]:
-            count += 2
+    door = {
+        "(" : "Open",
+        "[" : "Open",
+        "{" : "Open",
+        ")" : "Closed",
+        "]" : "Closed",
+        "}" : "Closed"}
 
-    if count == len(ans):
+    slist = list(s)
+    check = []
+
+    for i in slist:
+        if door[i] == "Open":
+            check.append(i)
+        elif door[i] == "Closed" and len(check) > 0:
+            if pairs[i] == check[-1]:
+                check.pop()
+            else:
+                check.insert(0, check)
+        else:
+            check.insert(0, check)
+
+    if len(check) == 0:
         return True
     else:
         return False
