@@ -27,7 +27,6 @@ Constraints:
 0 <= arr[i] <= 100
 0 <= target <= 300
 """
-import math
 from collections import Counter
 
 # define an input for testing purposes
