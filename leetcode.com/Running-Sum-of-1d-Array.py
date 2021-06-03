@@ -28,12 +28,15 @@ nums = [1,2,3,4]
 
 # actual code to submit
 def solution(input):
-    answer = []
+  answer = []
 
-    for i in range(len(nums)):
-        answer.append(sum(nums[:i+1]))
+  for i in enumerate(input):
+    if nums[i[0]] == 0:
+      answer.append(nums[0])
+    else:
+      answer.append((sum(nums[:nums[i[0]]])))
 
-    return answer
+  return answer
 
 # use print statement to check if it works
 print(solution(nums))
